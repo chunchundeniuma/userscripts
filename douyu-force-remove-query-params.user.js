@@ -4,7 +4,7 @@
 // @version      1.1
 // @description  劫持 history 方法 & popstate，把 URL 里的 ?query 全部剥掉
 // @author
-// @match        *://*.douy*.com/*
+// @match        *://*.douyu.com/*
 // @run-at       document-start
 // ==/UserScript==
 
