@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         douyu-force-remove-query-params
 // @namespace    https://github.com/chunchundeniuma/userscripts
-// @version      1.1
+// @version      1.1.1
 // @description  劫持 history 方法 & popstate，把 URL 里的 ?query 全部剥掉
 // @author
 // @match        *://*.douyu.com/*
@@ -54,9 +54,8 @@
             history.replaceState(null, '', location.pathname + location.hash);
         }
     });
-
-    // 首次加载时去掉原 URL 自带的 search
     */
+    // 首次加载时去掉原 URL 自带的 search
 // —————————————————————————————————————————————————————————————————————————————————————————————
     // document-start 阶段，如果已有 ?…，立刻清除一次
     {
