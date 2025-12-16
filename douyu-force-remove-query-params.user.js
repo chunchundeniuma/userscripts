@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         douyu-force-remove-query-params
 // @namespace    https://github.com/chunchundeniuma/userscripts
-// @version      1.2.0
+// @version      1.3.0
 // @description  劫持 history 方法 & popstate，把 URL 里的 ?query 全部剥掉
 // @author
 // @match        *://*.douyu.com/*
@@ -24,11 +24,9 @@
             }
             const params = new URLSearchParams(o.search);
             const rid = params.get('rid');  // 取 rid 参数
-            if (rid == null) {
-                o.search = '';
-            }
-            else {
-                o.search = `?rid=${rid}`;
+            o.search = '';
+            if (rid != null) {
+                o.pathname = '/' + rid;
             }
             return o.toString();
         } catch (e) {
