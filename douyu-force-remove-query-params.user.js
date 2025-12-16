@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         douyu-force-remove-query-params
 // @namespace    https://github.com/chunchundeniuma/userscripts
-// @version      1.3.0
-// @description  劫持 history 方法 & popstate，把 URL 里的 ?query 全部剥掉
+// @version      1.3.1
+// @description  清理 douyu 多余的 url
 // @author
 // @match        *://*.douyu.com/*
 // @run-at       document-idle
@@ -34,6 +34,7 @@
         }
     }
 
+/*
     // 劫持 pushState/replaceState
 // —————————————————————————————————————————————————————————————————————————————————————————————
     const rawPush = history.pushState;
@@ -43,6 +44,7 @@
         if (s) arguments[2] = s;
         return rawPush.apply(this, arguments);
     };
+*/
 
     const rawReplace = history.replaceState;
     history.replaceState = function (state, title, url) {
@@ -51,6 +53,7 @@
         return rawReplace.apply(this, arguments);
     };
 
+/*
     // 监听浏览器后退/前进
 // —————————————————————————————————————————————————————————————————————————————————————————————
     window.addEventListener('popstate', () => {
@@ -58,6 +61,7 @@
             history.replaceState(null, '', location.pathname + location.hash);
         }
     });
+*/
 
     // 首次加载时去掉原 URL 自带的 search
 // —————————————————————————————————————————————————————————————————————————————————————————————
