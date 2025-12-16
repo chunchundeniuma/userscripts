@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         douyu-force-remove-query-params
 // @namespace    https://github.com/chunchundeniuma/userscripts
-// @version      1.1.1
+// @version      1.2.0
 // @description  劫持 history 方法 & popstate，把 URL 里的 ?query 全部剥掉
 // @author
 // @match        *://*.douyu.com/*
-// @run-at       document-start
+// @run-at       document-idle
 // ==/UserScript==
 
 (function () {
@@ -22,7 +22,14 @@
             if (!o.search) {
                 return null;    // 本来就没 search，则不必替换
             }
-            o.search = '';
+            const params = new URLSearchParams(o.search);
+            const rid = params.get('rid');  // 取 rid 参数
+            if (rid == null) {
+                o.search = '';
+            }
+            else {
+                o.search = `?rid=${rid}`;
+            }
             return o.toString();
         } catch (e) {
             return null;
@@ -48,13 +55,12 @@
 
     // 监听浏览器后退/前进
 // —————————————————————————————————————————————————————————————————————————————————————————————
-    /*
     window.addEventListener('popstate', () => {
         if (location.search) {
             history.replaceState(null, '', location.pathname + location.hash);
         }
     });
-    */
+
     // 首次加载时去掉原 URL 自带的 search
 // —————————————————————————————————————————————————————————————————————————————————————————————
     // document-start 阶段，如果已有 ?…，立刻清除一次
