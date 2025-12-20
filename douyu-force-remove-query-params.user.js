@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         douyu-force-remove-query-params
 // @namespace    https://github.com/chunchundeniuma/userscripts
-// @version      1.3.1
+// @version      1.3.2
 // @description  清理 douyu 多余的 url
 // @author
 // @match        *://*.douyu.com/*
-// @run-at       document-idle
+// @run-at       document-start
 // ==/UserScript==
 
 (function () {
