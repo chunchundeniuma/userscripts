@@ -1,12 +1,15 @@
 // ==UserScript==
 // @name         douyu-force-remove-query-params
 // @namespace    https://github.com/chunchundeniuma/userscripts
-// @version      1.3.2
+// @version      1.3.3
 // @description  清理 douyu 多余的 url
 // @author
 // @match        *://*.douyu.com/*
-// @run-at       document-start
+// @run-at       document-idle
 // ==/UserScript==
+
+// Do not change @run-at to `document-start`,
+// it will conflict with "douyu-return-to-old-style.user.js".
 
 (function () {
     'use strict';
