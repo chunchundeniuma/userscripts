@@ -2,8 +2,7 @@
 // @name         douyu-return-to-old-style
 // @namespace    https://www.github.com/chunchundeniuma/userscripts
 // @match        *://*.douyu.com/*
-// @grant        none
-// @version      1.2.1
+// @version      1.2.2
 // @author       chunchundeniuma
 // @description  返回旧版 web 页面
 // @run-at       document-start
