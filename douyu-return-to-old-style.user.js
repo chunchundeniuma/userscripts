@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         douyu-return-to-old-style
 // @namespace    https://www.github.com/chunchundeniuma/userscripts
-// @match        *://*.douyu.com/*
 // @version      1.2.2
 // @author       chunchundeniuma
 // @description  返回旧版 web 页面
 // @run-at       document-start
 // @grant        window.onurlchange
+// @icon         https://www.douyu.com/favicon.ico
+// @match        *://*.douyu.com/*
 // @license      MIT
 // @downloadURL  https://raw.githubusercontent.com/chunchundeniuma/userscripts/refs/heads/master/douyu-return-to-old-style.user.js
 // @supportURL   https://www.github.com/chunchundeniuma/userscripts/issues
