@@ -1,13 +1,16 @@
 // ==UserScript==
 // @name         douyu-force-remove-query-params
 // @namespace    https://github.com/chunchundeniuma/userscripts
-// @version      1.3.4
+// @version      1.3.3
 // @description  清理 douyu 多余的 url query params
-// @author
+// @author       chunchundeniuma
+// @grant        window.onurlchange
 // @icon         https://www.douyu.com/favicon.ico
 // @match        *://*.douyu.com/*
-// @grant        window.onurlchange
 // @run-at       document-idle
+// @license      MIT
+// @downloadURL  https://raw.githubusercontent.com/chunchundeniuma/userscripts/refs/heads/master/douyu-force-remove-query-params.user.js
+// @supportURL   https://www.github.com/chunchundeniuma/userscripts/issues
 // ==/UserScript==
 
 (function () {
